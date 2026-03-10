@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+</head>
+<body>
+    <h1>Resultado del formulario</h1>
+
+    {% if errores %}
+        <h2>Se encontraron errores:</h2>
+        <ul>
+            {% for error in errores %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if datos %}
+        <h2>Datos recibidos correctamente</h2>
+        <p><strong>Nombre:</strong> {{ datos.nombre }}</p>
+        <p><strong>Programa académico:</strong> {{ datos.programa }}</p>
+        <p><strong>Correo:</strong> {{ datos.correo }}</p>
+        <p><strong>Edad:</strong> {{ datos.edad }}</p>
+        <p><strong>Mensaje:</strong> {{ datos.mensaje }}</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Volver al formulario</a>
+</body>
+</html>
